@@ -46,12 +46,6 @@ func (h *Monitor) AddCheck(cfg ...*Config) error {
 		}
 	}
 	h.configs = append(h.configs, cfg...)
-	if h.started {
-		for _, c := range cfg {
-			fmt.Printf("added config %+v\n", c)
-			h.startRunnerForConfig(c)
-		}
-	}
 	return nil
 }
 
